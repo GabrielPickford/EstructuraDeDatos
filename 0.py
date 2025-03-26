@@ -1,20 +1,25 @@
 class Solution(object):
-    def twoSum(self, nums, target):
-        """
+    def majorElemento(self, nums):
+        """Encuentra el elemento que mas se repite en un array.
         :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
+        :rtype: int
         """
-        sum = [0, 0]
+
+        m = 0
+        c = 0
         for i in range(len(nums)):
-            for j in range(len(nums)):
-                if i != j:
-                    if nums[i] + nums[j] == target:
-                        sum[0] = i
-                        sum[1] = j
-                        return sum
+            if c == 0:
+                m = nums[i]
+                c = 1
+            else:
+                if m == nums[i]:
+                    c += 1
+                else:
+                    c -= 1
+        return m
 
 
 sol = Solution()
-result = sol.twoSum([3, 3], 6)
+# Ejemplo de uso
+result = sol.majorElemento([2, 2, 3, 2, 4, 3, 3, 3, 4, 4, 3, 4, 4, 4])
 print(result)
