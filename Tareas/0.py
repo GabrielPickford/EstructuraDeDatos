@@ -1,8 +1,10 @@
 class Solution(object):
-    def majorElemento(self, nums):
+    def mayor_elemento(self, nums):
         """Encuentra el elemento que mas se repite en un array.
-        :type nums: List[int]
-        :rtype: int
+
+        type nums: List[int]
+
+        rtype: int
         """
 
         m = 0
