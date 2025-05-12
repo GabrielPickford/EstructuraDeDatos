@@ -18,7 +18,7 @@ class Controller:
             result = self.model.bitwise_and(num1, num2)
             self.view.display_result(result)
         except ValueError:
-            self.view.display_result({"decimal": "Error", "binary": "Invalid input"})
+            self.view.display_result({"Decimal": "Error", "Binario": "Input invalido"})
 
     def perform_or(self):
         try:
@@ -27,7 +27,7 @@ class Controller:
             result = self.model.bitwise_or(num1, num2)
             self.view.display_result(result)
         except ValueError:
-            self.view.display_result({"decimal": "Error", "binary": "Invalid input"})
+            self.view.display_result({"Decimal": "Error", "Binario": "Input invalido"})
 
     def perform_xor(self):
         try:
@@ -36,7 +36,7 @@ class Controller:
             result = self.model.bitwise_xor(num1, num2)
             self.view.display_result(result)
         except ValueError:
-            self.view.display_result({"decimal": "Error", "binary": "Invalid input"})
+            self.view.display_result({"Decimal": "Error", "Binario": "Input invalido"})
 
     def perform_not(self):
         try:
@@ -45,22 +45,26 @@ class Controller:
             result = self.model.bitwise_not(num3)
             self.view.display_result(result)
         except ValueError:
-            self.view.display_result({"decimal": "Error", "binary": "Invalid input"})
+            self.view.display_result({"Decimal": "Error", "Binario": "Input invalido"})
 
     def perform_left_shift(self):
         try:
-            _, _, num3 = self.view.get_input_values()
-            num3, shift = map(int, num3.split(","))
-            result = self.model.left_shift(num3, shift)
+            _, _, input_str = self.view.get_input_values()
+            parts = [p.strip() for p in input_str.split(",")]
+            num = int(parts[0])
+            shift = int(parts[1]) if len(parts) > 1 else 1  # Por defecto 1 si no se da
+            result = self.model.left_shift(num, shift)
             self.view.display_result(result)
-        except (ValueError, IndexError):
-            self.view.display_result({"decimal": "Error", "binary": "Invalid input"})
+        except Exception:
+            self.view.display_result({"Decimal": "Error", "Binario": "Input invalido"})
 
     def perform_right_shift(self):
         try:
-            _, _, num3 = self.view.get_input_values()
-            num3, shift = map(int, num3.split(","))
-            result = self.model.right_shift(num3, shift)
+            _, _, input_str = self.view.get_input_values()
+            parts = [p.strip() for p in input_str.split(",")]
+            num = int(parts[0])
+            shift = int(parts[1]) if len(parts) > 1 else 1  # Por defecto 1 si no se da
+            result = self.model.right_shift(num, shift)
             self.view.display_result(result)
-        except (ValueError, IndexError):
-            self.view.display_result({"decimal": "Error", "binary": "Invalid input"})
+        except Exception:
+            self.view.display_result({"Decimal": "Error", "Binario": "Input invalido"})

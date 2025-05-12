@@ -63,7 +63,7 @@ class View:
         # Resultado
         self.result_label = tk.Label(
             self.main_frame,
-            text="Result:",
+            text="Resultado:",
             font=self.custom_font,
             bg="#2b2b2b",
             fg="#f0f0f0",
