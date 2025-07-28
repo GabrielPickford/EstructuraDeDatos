@@ -14,7 +14,7 @@ class View:
 
         # Frame principal
         self.main_frame = tk.Frame(master, bg="#2b2b2b", padx=20, pady=20)
-        self.main_frame.pack()
+        self.main_frame.pack(anchor="center", expand=True)
 
         # Título
         self.title_label = tk.Label(
@@ -29,34 +29,34 @@ class View:
         # Entradas
         self.label1 = tk.Label(
             self.main_frame,
-            text="Primer número entero:",
+            text="Primer número entero:\n",
             font=self.custom_font,
             bg="#2b2b2b",
             fg="#f0f0f0",
         )
-        self.label1.pack(anchor="w")
+        self.label1.pack(anchor="center")
         self.entry1 = tk.Entry(self.main_frame, bg="#1e1e1e", fg="#f0f0f0", width=30)
         self.entry1.pack(pady=(0, 10))
 
         self.label2 = tk.Label(
             self.main_frame,
-            text="Segundo número entero (para AND, OR, XOR):",
+            text="Segundo número entero\n(para AND, OR, XOR):",
             font=self.custom_font,
             bg="#2b2b2b",
             fg="#f0f0f0",
         )
-        self.label2.pack(anchor="w")
+        self.label2.pack(anchor="center")
         self.entry2 = tk.Entry(self.main_frame, bg="#1e1e1e", fg="#f0f0f0", width=30)
         self.entry2.pack(pady=(0, 10))
 
         self.label3 = tk.Label(
             self.main_frame,
-            text="Número entero (para NOT, Shift):",
+            text="Número entero\n(para NOT, Shift):",
             font=self.custom_font,
             bg="#2b2b2b",
             fg="#f0f0f0",
         )
-        self.label3.pack(anchor="w")
+        self.label3.pack(anchor="center")
         self.entry3 = tk.Entry(self.main_frame, bg="#1e1e1e", fg="#f0f0f0", width=30)
         self.entry3.pack(pady=(0, 20))
 
@@ -68,7 +68,7 @@ class View:
             bg="#2b2b2b",
             fg="#f0f0f0",
         )
-        self.result_label.pack(anchor="w")
+        self.result_label.pack(anchor="center")
         self.result_display = tk.Text(
             self.main_frame,
             height=5,
